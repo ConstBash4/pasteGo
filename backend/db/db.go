@@ -34,8 +34,12 @@ func createDBConnection() (*sql.DB, error) {
 	}
 
 	db, err := sql.Open("sqlite3", "./data/database.db")
+	if err != nil {
+		return nil, err
+	}
 	db.SetMaxOpenConns(10)
 	db.SetMaxIdleConns(5)
+	_, err = db.Exec("PRAGMA foreign_keys = ON;")
 	if err != nil {
 		return nil, err
 	}
