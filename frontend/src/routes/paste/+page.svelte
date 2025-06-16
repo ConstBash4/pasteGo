@@ -326,7 +326,7 @@
 						<p>
 							{paste.text}
 						</p>
-						<p>http://localhost:3000/paste/{paste.id}</p>
+						<p>http://localhost:10015/paste/{paste.id}</p>
 					</div>
 					<div class="paste-actions">
 						<button on:click={() => handleEditPaste(paste)}>Редактировать</button>
